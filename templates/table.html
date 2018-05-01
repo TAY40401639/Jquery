@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Table Structures
+	</title>
+	<script type="text/javascript" src="..\static\js\jquery-3.3.1.min.js "></script>	
+	<script type="text/javascript">
+		$(function(){
+			$('#schedule .head').css('background','grey');
+			$('table td:not(:empty)').mouseover(function(){
+				$(this).css({
+					'background':'darkred',
+				});
+			});
+			$('table td').mouseout(function(){
+				$(this).css({
+					'background':'inherit',
+
+				});
+			});
+
+
+			$('body').prepend($('<div/>',
+			{text:'Hide key',
+			css:{
+				color:'blue',cursor:'pointer'},
+				click:function(){
+					// $('#key').toggle();
+					if ($('#key:visible').length==1) {
+					$('#key').fadeOut('slow');
+					$(this).text('Show Key');
+				}else{
+					$('#key').fadeIn('slow');
+					$(this).text('Hide Key');
+				}
+			}}));
+
+			
+
+		});
+	</script>
+</head>
+<body>
+<h1>Time Table</h1>
+<table id="schedule" border="1">
+	<caption>Schedule</caption>
+	<tr class="head">
+		<td></td>
+		<td>9:00</td>
+		<td>10:00</td>
+		<td>11:00</td>
+		<td>12:00</td>
+		<td>13:00</td>
+		<td>14:00</td>
+		<td>15:00</td>
+		<td>16:00</td>
+	</tr>
+	<tr class="Mon">
+		<td>Mon</td>
+		<td colspan="2">InFO7105 ISO</td>
+		<td colspan="2">IMD07103 HCI</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>SET07012 SD</td>
+	</tr>
+	<tr class="Tue">
+		<td>Tue</td>
+		<td></td>
+		<td colspan="2">SET07102 SD</td>
+		<td></td>
+		<td></td>
+		<td colspan="2">IMD07103 HCI</td>
+		<td></td>
+	</tr>
+	<tr class="Wed">
+		<td>Wed</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr class="Thu">
+		<td>Thu</td>
+		<td></td>
+		<td colspan="2">INFO07105 ISO</td>
+		<td>INFO07105 ISO</td>
+		<td></td>
+		<td colspan="2">IMD07103 HCI</td>
+		<td></td>
+	</tr>
+	<tr class="Fri">
+		<td>Fri</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>SET07102 SD</td>
+		<td>SET07102 SD</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<table id="key" border="1">
+	<caption>Key</caption>
+	<tr><th>HCI</th><td>Human Computer Interation</td></tr>
+	<tr><th>ISO</th><td>Information Systems in Organization</td></tr>
+	<tr><th>SD</th><td>Software Development</td></tr>
+</table>
+</body>
+</html>
